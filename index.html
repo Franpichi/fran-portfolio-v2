@@ -8,6 +8,7 @@
   <meta property="og:title" content="Fran Pizzichini — Portfolio" />
   <meta property="og:description" content="Full Stack Developer, UI/UX Designer & Digital Communicator based in Copenhagen." />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzA1MGUxYSIvPgogIDx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI3MDAiIAogICAgICAgIGZpbGw9IiMzOGI2ZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc3R5bGU9Iml0YWxpYyI+RjwvdGV4dD4KPC9zdmc+" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -216,14 +217,18 @@
 <body>
 
 <nav id="navbar">
-  <a href="javascript:void(0)" onclick="goTo('hero')" class="nav-logo">Fran<span>.</span></a>
+  <a href="#hero" class="nav-logo">Fran<span>.</span></a>
   <div class="nav-links" id="navLinks">
-    <a href="javascript:void(0)" onclick="goTo('about')">About</a>
-    <a href="javascript:void(0)" onclick="goTo('projects')">Projects</a>
-    <a href="javascript:void(0)" onclick="goTo('services')">Services</a>
-    <a href="javascript:void(0)" onclick="goTo('contact')" class="nav-cta">Let's talk</a>
+    <a href="#about" data-en="About" data-es="Sobre mí">About</a>
+    <a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a>
+    <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+    <a href="#contact" class="nav-cta" data-en="Let's talk" data-es="Hablemos">Let's talk</a>
   </div>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <div style="display:flex;align-items:center;gap:0.5rem;margin-right:0.5rem;">
+      <button onclick="setLang('en')" id="btn-en" style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;padding:0.25rem 0.6rem;border-radius:5px;border:1px solid rgba(56,182,255,0.3);background:rgba(56,182,255,0.15);color:#38b6ff;cursor:pointer;transition:all 0.2s;font-family:var(--sans);">EN</button>
+      <button onclick="setLang('es')" id="btn-es" style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;padding:0.25rem 0.6rem;border-radius:5px;border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:var(--sans);">ES</button>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -233,13 +238,13 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <span class="hero-slogan">Code · Design · Strategy</span>
+        <span class="hero-slogan" data-en="Code · Design · Strategy" data-es="Código · Diseño · Estrategia">Code · Design · Strategy</span>
         <h1>Full Stack<br>Developer &amp;<br><em>Designer</em></h1>
-        <p class="hero-role">React · Node.js · UI/UX · Copenhagen 🇩🇰</p>
-        <p class="hero-desc">I blend technology, design and communication to build digital experiences that stand out. My work goes beyond code — I focus on impact, story, and making products feel truly unique. From startups to solo ventures, I bring technical depth and creative vision together.</p>
+        <p class="hero-role" data-en="React · Node.js · UI/UX · Copenhagen 🇩🇰" data-es="React · Node.js · UI/UX · Copenhague 🇩🇰">React · Node.js · UI/UX · Copenhagen 🇩🇰</p>
+        <p class="hero-desc" data-en="I blend technology, design and communication to build digital experiences that stand out. My work goes beyond code — I focus on impact, story, and making products feel truly unique. From startups to solo ventures, I bring technical depth and creative vision together." data-es="Combino tecnología, diseño y comunicación para crear experiencias digitales que destacan. Mi trabajo va más allá del código — me enfoco en el impacto, la historia y en hacer que los productos se sientan únicos. Desde startups hasta proyectos propios, aporto profundidad técnica y visión creativa.">I blend technology, design and communication to build digital experiences that stand out. My work goes beyond code — I focus on impact, story, and making products feel truly unique. From startups to solo ventures, I bring technical depth and creative vision together.</p>
         <div class="hero-btns">
-          <a href="javascript:void(0)" onclick="goTo('projects')" class="btn-primary">View projects</a>
-          <a href="javascript:void(0)" onclick="goTo('contact')" class="btn-ghost">Get in touch</a>
+          <a href="#projects" class="btn-primary" data-en="View projects" data-es="Ver proyectos">View projects</a>
+          <a href="#contact" class="btn-ghost" data-en="Get in touch" data-es="Contactame">Get in touch</a>
         </div>
       </div>
       <div class="hero-photo-wrap">
@@ -264,14 +269,14 @@
 <section id="about">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="section-tag">About</span>
-      <h2>Who I <em>am</em></h2>
+      <span class="section-tag" data-en="About" data-es="Sobre mí">About</span>
+      <h2 data-en="Who I <em>am</em>" data-es="Quién <em>soy</em>">Who I <em>am</em></h2>
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
       <div class="fade-in">
-        <p class="about-intro">A hybrid between full stack development, product design and strategic thinking.</p>
-        <p class="about-body">I work across the full stack with React, Next.js, Node.js and Firebase, combining technical depth with a background in graphic design and journalism. I've built platforms, brands and automation systems — always with a focus on usability, scalability and making products people genuinely enjoy. Currently based in Copenhagen, I'm open to remote or hybrid work where I can contribute both creatively and technically.</p>
+        <p class="about-intro" data-en="A hybrid between full stack development, product design and strategic thinking." data-es="Un perfil híbrido entre desarrollo full stack, diseño de producto y pensamiento estratégico.">A hybrid between full stack development, product design and strategic thinking.</p>
+        <p class="about-body" data-en="I work across the full stack with React, Next.js, Node.js and Firebase, combining technical depth with a background in graphic design and journalism. I've built platforms, brands and automation systems — always with a focus on usability, scalability and making products people genuinely enjoy. Currently based in Copenhagen, I'm open to remote or hybrid work where I can contribute both creatively and technically." data-es="Trabajo en todo el stack con React, Next.js, Node.js y Firebase, combinando profundidad técnica con formación en diseño gráfico y periodismo. He construido plataformas, marcas y sistemas de automatización — siempre con foco en la usabilidad, la escalabilidad y en crear productos que la gente disfrute. Basado en Copenhague, estoy abierto a trabajo remoto o híbrido donde pueda contribuir tanto creativa como técnicamente.">I work across the full stack with React, Next.js, Node.js and Firebase, combining technical depth with a background in graphic design and journalism. I've built platforms, brands and automation systems — always with a focus on usability, scalability and making products people genuinely enjoy. Currently based in Copenhagen, I'm open to remote or hybrid work where I can contribute both creatively and technically.</p>
       </div>
       <div class="fade-in">
         <span class="skills-label">Tech &amp; Tools</span>
@@ -298,8 +303,8 @@
 <section id="projects">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="section-tag">Work</span>
-      <h2>Featured <em>Projects</em></h2>
+      <span class="section-tag" data-en="Work" data-es="Trabajo">Work</span>
+      <h2 data-en="Featured <em>Projects</em>" data-es="Proyectos <em>Destacados</em>">Featured <em>Projects</em></h2>
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
@@ -414,8 +419,8 @@
 <section id="services">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="section-tag">Services</span>
-      <h2>What I <em>do</em></h2>
+      <span class="section-tag" data-en="Services" data-es="Servicios">Services</span>
+      <h2 data-en="What I <em>do</em>" data-es="Lo que <em>hago</em>">What I <em>do</em></h2>
       <div class="section-line"></div>
     </div>
     <div class="services-grid">
@@ -426,8 +431,8 @@
           <span class="svc-icon">⚙️</span>
         </div>
         <div class="svc-body">
-          <h3 class="svc-title">Full Stack Development</h3>
-          <p class="svc-desc">Fast, scalable, mobile-friendly websites and apps using React, Next.js, Node.js and Firebase. Everything is optimized and tailored to your business goals.</p>
+          <h3 class="svc-title" data-en="Full Stack Development" data-es="Desarrollo Full Stack">Full Stack Development</h3>
+          <p class="svc-desc" data-en="Fast, scalable, mobile-friendly websites and apps using React, Next.js, Node.js and Firebase. Everything is optimized and tailored to your business goals." data-es="Sitios y aplicaciones rápidas, escalables y adaptadas para móvil usando React, Next.js, Node.js y Firebase. Todo optimizado y adaptado a tus objetivos de negocio.">Fast, scalable, mobile-friendly websites and apps using React, Next.js, Node.js and Firebase. Everything is optimized and tailored to your business goals.</p>
         </div>
       </div>
       <div class="svc-card fade-in">
@@ -437,8 +442,8 @@
           <span class="svc-icon">✦</span>
         </div>
         <div class="svc-body">
-          <h3 class="svc-title">UI/UX Design &amp; Prototyping</h3>
-          <p class="svc-desc">User-friendly and elegant interfaces designed in Figma. Focused on usability, aesthetics and creating joyful experiences for your users.</p>
+          <h3 class="svc-title" data-en="UI/UX Design &amp; Prototyping" data-es="Diseño UI/UX y Prototipado">UI/UX Design &amp; Prototyping</h3>
+          <p class="svc-desc" data-en="User-friendly and elegant interfaces designed in Figma. Focused on usability, aesthetics and creating joyful experiences for your users." data-es="Interfaces elegantes y fáciles de usar diseñadas en Figma. Con foco en usabilidad, estética y crear experiencias que la gente disfrute.">User-friendly and elegant interfaces designed in Figma. Focused on usability, aesthetics and creating joyful experiences for your users.</p>
         </div>
       </div>
       <div class="svc-card fade-in">
@@ -448,8 +453,8 @@
           <span class="svc-icon">◈</span>
         </div>
         <div class="svc-body">
-          <h3 class="svc-title">Branding &amp; Visual Identity</h3>
-          <p class="svc-desc">Bold and consistent branding that tells your story. From logos and brand guides to visuals that reflect your values across every channel.</p>
+          <h3 class="svc-title" data-en="Branding &amp; Visual Identity" data-es="Branding e Identidad Visual">Branding &amp; Visual Identity</h3>
+          <p class="svc-desc" data-en="Bold and consistent branding that tells your story. From logos and brand guides to visuals that reflect your values across every channel." data-es="Branding sólido y consistente que cuenta tu historia. Desde logos y guías de marca hasta visuales que reflejan tus valores en cada canal.">Bold and consistent branding that tells your story. From logos and brand guides to visuals that reflect your values across every channel.</p>
         </div>
       </div>
       <div class="svc-card fade-in">
@@ -459,8 +464,8 @@
           <span class="svc-icon">◎</span>
         </div>
         <div class="svc-body">
-          <h3 class="svc-title">Digital Marketing &amp; Content</h3>
-          <p class="svc-desc">Content plans, newsletters, social campaigns and SEO designed to connect with your audience and grow your brand with meaning.</p>
+          <h3 class="svc-title" data-en="Digital Marketing &amp; Content" data-es="Marketing Digital y Contenidos">Digital Marketing &amp; Content</h3>
+          <p class="svc-desc" data-en="Content plans, newsletters, social campaigns and SEO designed to connect with your audience and grow your brand with meaning." data-es="Planes de contenido, newsletters, campañas sociales y SEO diseñados para conectar con tu audiencia y hacer crecer tu marca con propósito.">Content plans, newsletters, social campaigns and SEO designed to connect with your audience and grow your brand with meaning.</p>
         </div>
       </div>
     </div>
@@ -472,20 +477,20 @@
   <div class="container">
     <div class="contact-wrap">
       <div class="section-header fade-in">
-        <span class="section-tag">Contact</span>
-        <h2>Let's work <em>together</em></h2>
+        <span class="section-tag" data-en="Contact" data-es="Contacto">Contact</span>
+        <h2 data-en="Let's work <em>together</em>" data-es="Trabajemos <em>juntos</em>">Let's work <em>together</em></h2>
         <div class="section-line" style="margin:0.9rem auto 0;"></div>
       </div>
-      <p class="contact-subtitle fade-in">Have a project, startup or idea?</p>
-      <p class="contact-desc fade-in">I'm open to freelance work, collaborations or full-time roles. Let's talk about your vision and see how I can help bring it to life — with creativity, code and clarity.</p>
+      <p class="contact-subtitle fade-in" data-en="Have a project, startup or idea?" data-es="¿Tenés un proyecto, startup o idea?">Have a project, startup or idea?</p>
+      <p class="contact-desc fade-in" data-en="I'm open to freelance work, collaborations or full-time roles. Let's talk about your vision and see how I can help bring it to life — with creativity, code and clarity." data-es="Estoy abierto a trabajo freelance, colaboraciones o roles full-time. Hablemos de tu visión y veamos cómo puedo ayudarte a hacerla realidad — con creatividad, código y claridad.">I'm open to freelance work, collaborations or full-time roles. Let's talk about your vision and see how I can help bring it to life — with creativity, code and clarity.</p>
       <div class="contact-form fade-in">
         <form action="https://formsubmit.co/franpizzichini@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://fran-portfolio-kappa.vercel.app/thank-you" />
-          <div class="form-group"><input type="text" name="name" placeholder="Your name" required /></div>
-          <div class="form-group"><input type="email" name="email" placeholder="Your email" required /></div>
-          <div class="form-group"><textarea name="message" rows="5" placeholder="Your message..." required></textarea></div>
-          <button type="submit" class="form-submit">Send message →</button>
+          <div class="form-group"><input type="text" name="name" placeholder="Your name" data-placeholder-en="Your name" data-placeholder-es="Tu nombre" required /></div>
+          <div class="form-group"><input type="email" name="email" placeholder="Your email" data-placeholder-en="Your email" data-placeholder-es="Tu email" required /></div>
+          <div class="form-group"><textarea name="message" rows="5" placeholder="Your message..." data-placeholder-en="Your message..." data-placeholder-es="Tu mensaje..." required></textarea></div>
+          <button type="submit" class="form-submit" data-en="Send message →" data-es="Enviar mensaje →">Send message →</button>
         </form>
       </div>
       <div class="contact-links fade-in">
@@ -497,25 +502,65 @@
 </section>
 
 <footer>
-  <span>© 2026 Fran Pizzichini. All rights reserved.</span>
+  <span data-en="© 2026 Fran Pizzichini. All rights reserved." data-es="© 2026 Fran Pizzichini. Todos los derechos reservados.">© 2026 Fran Pizzichini. All rights reserved.</span>
   <span style="color:var(--faint)">Built with ♥ in Copenhagen</span>
 </footer>
 
 <script>
-  
-  function goTo(id) {
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
-  }
+  // Nav scroll
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30));
+
+  // Mobile menu
   function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
-  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const id = this.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Fade in observer
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 75); obs.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Language switcher
+  let currentLang = 'en';
+  function setLang(lang) {
+    currentLang = lang;
+    // Update button styles
+    document.getElementById('btn-en').style.background = lang === 'en' ? 'rgba(56,182,255,0.15)' : 'transparent';
+    document.getElementById('btn-en').style.borderColor = lang === 'en' ? 'rgba(56,182,255,0.3)' : 'transparent';
+    document.getElementById('btn-en').style.color = lang === 'en' ? '#38b6ff' : 'var(--muted)';
+    document.getElementById('btn-es').style.background = lang === 'es' ? 'rgba(56,182,255,0.15)' : 'transparent';
+    document.getElementById('btn-es').style.borderColor = lang === 'es' ? 'rgba(56,182,255,0.3)' : 'transparent';
+    document.getElementById('btn-es').style.color = lang === 'es' ? '#38b6ff' : 'var(--muted)';
+    // Translate all elements with data-en/data-es
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.innerHTML = el.getAttribute('data-' + lang);
+    });
+    // Translate placeholders
+    document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+      el.placeholder = el.getAttribute('data-placeholder-' + lang);
+    });
+    // Update page title
+    document.title = lang === 'es'
+      ? 'Fran Pizzichini — Desarrollador Full Stack y Diseñador'
+      : 'Fran Pizzichini — Full Stack Developer & Designer';
+  }
 </script>
 </body>
 </html>
