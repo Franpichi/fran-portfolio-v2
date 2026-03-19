@@ -216,12 +216,12 @@
 <body>
 
 <nav id="navbar">
-  <a href="javascript:void(0)" onclick="scrollTo('hero')" class="nav-logo">Fran<span>.</span></a>
+  <a href="javascript:void(0)" onclick="goTo('hero')" class="nav-logo">Fran<span>.</span></a>
   <div class="nav-links" id="navLinks">
-    <a href="javascript:void(0)" onclick="scrollTo('about')">About</a>
-    <a href="javascript:void(0)" onclick="scrollTo('projects')">Projects</a>
-    <a href="javascript:void(0)" onclick="scrollTo('services')">Services</a>
-    <a href="javascript:void(0)" onclick="scrollTo('contact')" class="nav-cta">Let's talk</a>
+    <a href="javascript:void(0)" onclick="goTo('about')">About</a>
+    <a href="javascript:void(0)" onclick="goTo('projects')">Projects</a>
+    <a href="javascript:void(0)" onclick="goTo('services')">Services</a>
+    <a href="javascript:void(0)" onclick="goTo('contact')" class="nav-cta">Let's talk</a>
   </div>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -238,8 +238,8 @@
         <p class="hero-role">React · Node.js · UI/UX · Copenhagen 🇩🇰</p>
         <p class="hero-desc">I blend technology, design and communication to build digital experiences that stand out. My work goes beyond code — I focus on impact, story, and making products feel truly unique. From startups to solo ventures, I bring technical depth and creative vision together.</p>
         <div class="hero-btns">
-          <a href="javascript:void(0)" onclick="scrollTo('projects')" class="btn-primary">View projects</a>
-          <a href="javascript:void(0)" onclick="scrollTo('contact')" class="btn-ghost">Get in touch</a>
+          <a href="javascript:void(0)" onclick="goTo('projects')" class="btn-primary">View projects</a>
+          <a href="javascript:void(0)" onclick="goTo('contact')" class="btn-ghost">Get in touch</a>
         </div>
       </div>
       <div class="hero-photo-wrap">
@@ -503,7 +503,7 @@
 
 <script>
   
-  function scrollTo(id) {
+  function goTo(id) {
     document.getElementById(id).scrollIntoView({behavior:'smooth'});
   }
   const nav = document.getElementById('navbar');
